@@ -26,15 +26,15 @@ const BusRegister = ({ navigation }) => {
 
           <Stack space={2} w="80%" my="8" mx="auto" px={8}>
             <Input
-              className=" bg-beyaz dark:bg-yesil2 text-[14px] text-yesil dark:text-beyaz "
+              className=" bg-beyaz  text-[14px] text-gri dark:text-beyaz "
               variant="filled"
-              placeholder="Telefon numarası"
-              keyboardType="phone-pad"
+              placeholder="Email"
+              keyboardType="email-address"
               shadow={1}
               maxLength={11}
             />
             <Input
-              className=" bg-beyaz relative dark:bg-yesil2 text-[14px] text-yesil dark:text-beyaz "
+              className=" bg-beyaz relative  text-[14px] text-gri dark:text-beyaz "
               variant="filled"
               placeholder="Şifre"
               shadow={1}
@@ -64,7 +64,7 @@ const BusRegister = ({ navigation }) => {
             </View>
           </Stack>
           <TouchableOpacity
-            className="w-[55%] h-14 shadow shadow-yesil2 justify-center items-center rounded-md mb-4 bg-beyaz dark:bg-yesil2"
+            className="w-[55%] h-14 shadow shadow-yesil2 justify-center items-center rounded-md mb-4 bg-beyaz "
             activeOpacity={0.7}
             // onPress={() => navigation.navigate()}
           >
@@ -75,7 +75,7 @@ const BusRegister = ({ navigation }) => {
         </View>
         <View className="w-full items-center">
           <TouchableOpacity
-            className="w-[80%] h-14 shadow shadow-yesil2 justify-center items-center rounded-md mb-8 bg-beyaz dark:bg-yesil2"
+            className="w-[80%] h-14 shadow shadow-yesil2 justify-center items-center rounded-md mb-8 bg-beyaz "
             activeOpacity={0.9}
             onPress={() => {
               navigation.navigate("AuthEntryQuestion");

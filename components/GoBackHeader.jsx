@@ -20,7 +20,7 @@ const GoBackHeader = ({ title }) => {
       </TouchableOpacity>
       <View className="h-full flex-1 items-center justify-center flex-row">
         <Text
-          className={`text-[16px] dark:text-beyaz font-black ${
+          className={`text-[16px] dark:text-beyaz font-nunitoExtraBold ${
             title && ("#3a3a3a")
           }`}
         >

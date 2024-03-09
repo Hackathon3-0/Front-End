@@ -11,15 +11,15 @@ const CusRegister = ({ navigation }) => {
   const [show, setShow] = useState(false);
 
   return (
-    <View className="flex-1 bg-beyazark dark:bg-yesil">
+    <View className="flex-1 bg-beyazark ">
       {/* header */}
-      <GoBackHeader title={"Müşteri Kayıt"} />
+      <GoBackHeader title={"Öğretmen Kayıt"} />
       <ScrollView
         contentContainerStyle={{ flexGrow: 1 }}
         showsVerticalScrollIndicator={false}
       >
         <View className="flex-1 justify-center items-center ">
-          <View className="w-32 h-32 rounded-full">
+          {/* <View className="w-32 h-32 rounded-full">
             <DowlandImage
               values={{
                 // image: "https://www.w3schools.com/w3images/avatar3.png",
@@ -27,44 +27,30 @@ const CusRegister = ({ navigation }) => {
                   "https://i.kym-cdn.com/entries/icons/facebook/000/023/980/db1.jpg",
               }}
             />
-            <Text className="text-center mt-1 text-base text-yesil2 dark:text-beyazark">
+            <Text className="text-center mt-1 text-base text-yesil2 ark">
               Profil Fotoğrafı
             </Text>
-          </View>
+          </View> */}
 
           <Stack space={2} w="80%" my="8" mx="auto" px={8}>
             <Input
-              className=" bg-beyaz dark:bg-yesil2 text-[14px] text-yesil dark:text-beyaz"
+              className=" bg-beyaz  text-[14px] text-gri "
               variant="filled"
-              placeholder="Ad"
+              placeholder="Ad Soyad"
               shadow={1}
               maxLength={20}
             />
             <Input
-              className=" bg-beyaz dark:bg-yesil2 text-[14px] text-yesil dark:text-beyaz "
-              variant="filled"
-              placeholder="Soyad"
-              shadow={1}
-              maxLength={20}
-            />
-            <Input
-              className=" bg-beyaz dark:bg-yesil2 text-[14px] text-yesil dark:text-beyaz "
+              className=" bg-beyaz  text-[14px] text-gri  "
               variant="filled"
               placeholder="Email"
               keyboardType="email-address"
               shadow={1}
               maxLength={50}
             />
+
             <Input
-              className=" bg-beyaz dark:bg-yesil2 text-[14px] text-yesil dark:text-beyaz "
-              variant="filled"
-              placeholder="Telefon numarası"
-              keyboardType="phone-pad"
-              shadow={1}
-              maxLength={11}
-            />
-            <Input
-              className=" bg-beyaz relative dark:bg-yesil2 text-[14px] text-yesil dark:text-beyaz "
+              className=" bg-beyaz relative  text-[14px] text-gri  "
               variant="filled"
               placeholder="Şifre"
               shadow={1}
@@ -84,7 +70,7 @@ const CusRegister = ({ navigation }) => {
               }
             />
             <Input
-              className=" bg-beyaz dark:bg-yesil2 text-[14px] text-yesil dark:text-beyaz "
+              className=" bg-beyaz  text-[14px] text-gri  "
               variant="filled"
               placeholder="Şifre yeniden"
               shadow={1}
@@ -93,25 +79,25 @@ const CusRegister = ({ navigation }) => {
             />
           </Stack>
           <TouchableOpacity
-            className="w-[55%] h-14 shadow shadow-yesil2 justify-center items-center rounded-md mb-4 bg-beyaz dark:bg-yesil2"
+            className="w-[55%] h-14 shadow shadow-yesil2 justify-center items-center rounded-md mb-4 bg-yesil "
             activeOpacity={0.7}
             onPress={() => navigation.navigate("VerificationCode")}
           >
-            <Text className="font-semibold text-lg text-yesil2 dark:text-beyaz">
+            <Text className="font-semibold text-lg text-beyaz ">
               Devam Et
             </Text>
           </TouchableOpacity>
         </View>
         <View className="w-full items-center">
           <TouchableOpacity
-            className="w-[80%] h-14 shadow shadow-yesil2 justify-center items-center rounded-md mb-4 bg-beyaz dark:bg-yesil2"
+            className="w-[80%] h-14 shadow shadow-yesil2 justify-center items-center rounded-md mb-4 bg-beyaz "
             activeOpacity={0.9}
             // onPress={() => {
             //   navigation.navigate("EmpProfile");
             // }}
             onPress={() => toggleColorScheme()}
           >
-            <Text className="font-semibold text-lg text-yesil2 dark:text-beyaz">
+            <Text className="font-semibold text-lg text-gri ">
               Zaten bir hesabım var
             </Text>
           </TouchableOpacity>

@@ -10,9 +10,9 @@ const BusRegister = ({ navigation }) => {
   const [show, setShow] = useState(false);
 
   return (
-    <View className="flex-1 bg-beyazark dark:bg-yesil   ">
+    <View className="flex-1 bg-beyazark    ">
       {/* header */}
-      <GoBackHeader title={"İşletme Kayıt"} />
+      <GoBackHeader title={"Öğrennci Kayıt"} />
       <ScrollView
         contentContainerStyle={{ flexGrow: 1 }}
         showsVerticalScrollIndicator={false}
@@ -20,14 +20,14 @@ const BusRegister = ({ navigation }) => {
         <View className="flex-1  justify-center items-center ">
           <Stack space={2} w="80%" my="8" mx="auto" px={8}>
             <Input
-              className=" bg-beyaz dark:bg-yesil2 text-[14px] text-yesil dark:text-beyaz"
+              className=" bg-beyaz  text-[14px] text-gri "
               variant="filled"
-              placeholder="İşletme Adı"
+              placeholder="Ad Soyad"
               shadow={1}
               maxLength={20}
             />
             <Input
-              className=" bg-beyaz dark:bg-yesil2 text-[14px] text-yesil dark:text-beyaz "
+              className=" bg-beyaz  text-[14px] text-gri  "
               variant="filled"
               placeholder="Email"
               keyboardType="email-address"
@@ -35,15 +35,7 @@ const BusRegister = ({ navigation }) => {
               maxLength={50}
             />
             <Input
-              className=" bg-beyaz dark:bg-yesil2 text-[14px] text-yesil dark:text-beyaz "
-              variant="filled"
-              placeholder="Telefon numarası"
-              keyboardType="phone-pad"
-              shadow={1}
-              maxLength={11}
-            />
-            <Input
-              className=" bg-beyaz relative dark:bg-yesil2 text-[14px] text-yesil dark:text-beyaz "
+              className=" bg-beyaz relative  text-[14px] text-gri  "
               variant="filled"
               placeholder="Şifre"
               shadow={1}
@@ -63,7 +55,7 @@ const BusRegister = ({ navigation }) => {
               }
             />
             <Input
-              className=" bg-beyaz dark:bg-yesil2 text-[14px] text-yesil dark:text-beyaz "
+              className=" bg-beyaz  text-[14px] text-gri  "
               variant="filled"
               placeholder="Şifre yeniden"
               shadow={1}
@@ -72,25 +64,25 @@ const BusRegister = ({ navigation }) => {
             />
           </Stack>
           <TouchableOpacity
-            className="w-[55%] h-14 shadow shadow-yesil2 justify-center items-center rounded-md mb-4 bg-beyaz dark:bg-yesil2"
+            className="w-[55%] h-14 shadow shadow-yesil2 justify-center items-center rounded-md mb-4 bg-yesil "
             activeOpacity={0.7}
             onPress={() => navigation.navigate("BusRegisterContinue")}
           >
-            <Text className="font-semibold text-lg text-yesil2 dark:text-beyaz">
+            <Text className="font-semibold text-lg font-nunitoBold text-beyaz ">
               Devam Et
             </Text>
           </TouchableOpacity>
         </View>
         <View className="w-full items-center">
           <TouchableOpacity
-            className="w-[80%] h-14 shadow shadow-yesil2 justify-center items-center rounded-md mb-4 bg-beyaz dark:bg-yesil2"
+            className="w-[80%] h-14 shadow shadow-yesil2 justify-center items-center rounded-md mb-4 bg-beyaz "
             activeOpacity={0.9}
             // onPress={() => {
             //   navigation.navigate("EmpProfile");
             // }}
             onPress={() => toggleColorScheme()}
           >
-            <Text className="font-semibold text-lg text-yesil2 dark:text-beyaz">
+            <Text className="font-semibold font-nunitoBold text-lg text-gri ">
               Zaten bir hesabım var
             </Text>
           </TouchableOpacity>

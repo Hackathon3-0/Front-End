@@ -15,8 +15,7 @@ const AuthEntryQuestion = ({ navigation }) => {
         <View className="w-full justify-center items-center">
           <View className="w-[55%]">
             <Text
-              style={{ fontFamily: "nunitoExtraBold" }}
-              className="text-4xl mb-4 text-yesil"
+              className="text-4xl mb-4 text-yesil font-extrabold"
             >
               Kaydol
             </Text>
