@@ -117,6 +117,7 @@ const BusinessRouter = () => {
     >
       <Stack.Screen name="BusinessBottomTab" component={BusinessBottomTab} />
       <Stack.Screen name="TeacherDetail" component={TeacherDetail} />
+      <Stack.Screen name="BlogRead" component={BlogRead} />
 
       {/* <Stack.Screen name="QrCode" component={QrCode} />
       <Stack.Screen name="createEmployee" component={CreateEmployee} />
