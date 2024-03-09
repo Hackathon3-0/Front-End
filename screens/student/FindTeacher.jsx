@@ -99,7 +99,7 @@ const FindTeacher = () => {
   return (
     <View className="flex-1 items-center  ">
       <Header />
-      <Stack space={14} w="100%" mt="2" mx="auto" px={8}>
+      <Stack space={14} w="100%" p="2" className="bg-beyaz" mx="auto" px={8}>
         <Input
           className=" bg-beyaz text-[14px] items-center justify-center text-gri "
           variant="rounded"
