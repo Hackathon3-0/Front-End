@@ -1,7 +1,10 @@
 import React from "react";
 import { View, Text, Image, TouchableOpacity } from "react-native";
+import { useSelector } from "react-redux";
 
 const AuthEntryQuestion = ({ navigation }) => {
+  const {teacher} = useSelector((state) => state.teacher);
+  console.log(teacher, "teacher")
   return (
     <View className="flex-1 bg-beyazark justify-center">
       {/* header */}

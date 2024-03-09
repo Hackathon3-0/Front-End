@@ -4,11 +4,38 @@ import { View, Text, TouchableOpacity, ScrollView, Image } from "react-native";
 import GoBackHeader from "../../components/GoBackHeader";
 import { Input, Stack } from "native-base";
 import { Ionicons } from "@expo/vector-icons";
+import { teacherLogin } from "../../utils/TeacherOperations";
+import { useDispatch } from "react-redux";
 
 const BusRegister = ({ navigation }) => {
+  const dispatch = useDispatch();
 
   const [show, setShow] = useState(false);
+  const [email, setEmail] = useState("");
+  const [isValidEmail, setIsValidEmail] = useState(true);
+  const [password, setPassword] = useState("");
 
+
+  const validateEmail = (text) => {
+    // Email için bir regex kullanarak doğrulama yapalım
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const isValid = emailRegex.test(text);
+    console.log(isValid, "isValid")
+    setIsValidEmail(isValid);
+    setEmail(text);
+  };
+
+
+  const handleLogin = () => {
+    if (email === "" || password === "") {
+      alert("Tüm alanları doldurunuz");
+    } else if (!isValidEmail) {
+      alert("Geçerli bir email giriniz");
+    }
+    else {
+      teacherLogin({ email, password }, dispatch);
+    }
+  }
   return (
     <View className="flex-1 bg-beyazark dark:bg-yesil ">
       {/* header */}
@@ -31,7 +58,9 @@ const BusRegister = ({ navigation }) => {
               placeholder="Email"
               keyboardType="email-address"
               shadow={1}
-              maxLength={11}
+              value={email}
+              onChangeText={validateEmail}
+              borderColor={isValidEmail ? "transparent" : "red.900"}
             />
             <Input
               className=" bg-beyaz relative  text-[14px] text-gri dark:text-beyaz "
@@ -40,6 +69,8 @@ const BusRegister = ({ navigation }) => {
               shadow={1}
               maxLength={20}
               secureTextEntry={!show}
+              value={password}
+              onChangeText={(text) => setPassword(text)}
               InputRightElement={
                 <TouchableOpacity
                   onPress={() => setShow(!show)}
@@ -66,10 +97,10 @@ const BusRegister = ({ navigation }) => {
           <TouchableOpacity
             className="w-[55%] h-14 shadow shadow-yesil2 justify-center items-center rounded-md mb-4 bg-beyaz "
             activeOpacity={0.7}
-            // onPress={() => navigation.navigate()}
+            onPress={handleLogin}
           >
             <Text className="font-semibold text-lg text-yesil2 dark:text-beyaz">
-              Devam Et
+              Giriş Yap
             </Text>
           </TouchableOpacity>
         </View>

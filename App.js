@@ -7,6 +7,9 @@ import { NativeBaseProvider } from "native-base";
 import AuthNavigator from "./profile/AuthRouth";
 import EducationRouth from "./profile/EducationRouth";
 import TeacherRouth from "./profile/TeacherRouth";
+import { AlertNotificationRoot } from 'react-native-alert-notification';
+import { Provider } from "react-redux";
+import store from "./redux/store";
 
 
 
@@ -38,10 +41,14 @@ const App = () => {
   return (
     <>
       <NativeBaseProvider>
+        <AlertNotificationRoot >
+          <Provider store={store}>
         <StatusBar translucent={false} />
         <NavigationContainer>
           {loggedIn ? <SelectedNavigator /> : <AuthNavigator />}
         </NavigationContainer>
+        </Provider>
+        </AlertNotificationRoot>
       </NativeBaseProvider>
     </>
   );
