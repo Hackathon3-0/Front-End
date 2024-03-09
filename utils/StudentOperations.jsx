@@ -4,14 +4,14 @@ import {  updateToken, updateUser } from '../redux/userSlice';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 
-const teacherRegister = async (values) => {
+const studentRegister = async (values,navigation) => {
     const data ={
         name:values.name,
         email:values.email,
         password:values.password
     }
     try {
-        const response = await fetch(`${BACKEND_URL}/api/v1/teachers/register`, {
+        const response = await fetch(`${BACKEND_URL}/api/v1/students/register`, {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',
@@ -26,6 +26,8 @@ const teacherRegister = async (values) => {
                 title: 'Başarılı',
                 textBody: 'Kayıt Başarılı',
               })
+            
+            navigation.navigate('Login')
         }
         else{
             Toast.show({
@@ -41,7 +43,7 @@ const teacherRegister = async (values) => {
 
 }
 
-const teacherLogin = async (values,dispatch) => {
+const studentLogin = async (values,dispatch) => {
     const data ={
         email:values.email,
         password:values.password
@@ -81,4 +83,4 @@ const teacherLogin = async (values,dispatch) => {
     }
 }
 
-export { teacherRegister ,teacherLogin}
+export { studentRegister ,studentLogin}

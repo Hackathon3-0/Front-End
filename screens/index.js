@@ -13,6 +13,7 @@ import Message from "./student/Message"
 import Profile from "./student/Profile"
 import ABC from "./student/ABC"
 import TeacherDetail from "./student/TeacherDetail"
+import Category from "./student/Category"
 
 
 
@@ -37,5 +38,6 @@ export{
     Profile,
     ABC,
     TeacherDetail,
+    Category
     
 }

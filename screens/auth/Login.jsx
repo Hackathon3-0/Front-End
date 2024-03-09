@@ -20,7 +20,6 @@ const BusRegister = ({ navigation }) => {
     // Email için bir regex kullanarak doğrulama yapalım
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const isValid = emailRegex.test(text);
-    console.log(isValid, "isValid")
     setIsValidEmail(isValid);
     setEmail(text);
   };
@@ -95,11 +94,11 @@ const BusRegister = ({ navigation }) => {
             </View>
           </Stack>
           <TouchableOpacity
-            className="w-[55%] h-14 shadow shadow-yesil2 justify-center items-center rounded-md mb-4 bg-beyaz "
+            className="w-[55%] h-14 shadow shadow-yesil2 justify-center items-center rounded-md mb-4 bg-yesil "
             activeOpacity={0.7}
             onPress={handleLogin}
           >
-            <Text className="font-semibold text-lg text-yesil2 dark:text-beyaz">
+            <Text className="font-semibold text-lg text-beyaz font-nunitoBold">
               Giriş Yap
             </Text>
           </TouchableOpacity>
