@@ -18,6 +18,7 @@ module.exports = {
         "beyazark":"#F1F1F1",
         "beyazbo":"#dddddd",
         "gri": "#414141",
+        "griAcik": "#7B7B7B",
         "gri2": "#3a3a3a",
         /*arkaplan> f9*/ 
       },

@@ -5,18 +5,21 @@ import { Stack, Input, Avatar } from "native-base";
 import Icon from "react-native-vector-icons/FontAwesome5";
 
 import { FlatList } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
-const FindTeacher = ({ navigation }) => {
+const FindTeacher = () => {
+  const navigation = useNavigation();
   const [searchText, setSearchText] = React.useState("");
 
   // flatList
   const DATA = [
     {
       id: "1",
-      name: "Elif Elibol",
+      name: "Zeliha Erdem",
       title: "Felsefe Öğretmeni",
       explanation:
         "Felsefe konusunda size kapsamlı ders verebilirim. İstediğiniz zaman istediğiniz soruyu sorabilirsiniz. Ayrıca 7/ 24 aktifim",
+      img: "https://cdnstorage.sendbig.com/unreal/female.webp",
     },
     {
       id: "2",
@@ -24,27 +27,33 @@ const FindTeacher = ({ navigation }) => {
       title: "Felsefe Öğretmeni",
       explanation:
         "Felsefe konusunda size kapsamlı ders verebilirim. İstediğiniz zaman istediğiniz soruyu sorabilirsiniz. Ayrıca 7/ 24 aktifim",
+      img: "https://www.w3schools.com/w3images/avatar2.png",
+
     },
     {
       id: "3",
-      name: "Elif Elibol",
+      name: "Ali Akkaya",
       title: "Felsefe Öğretmeni",
       explanation:
         "Felsefe konusunda size kapsamlı ders verebilirim. İstediğiniz zaman istediğiniz soruyu sorabilirsiniz. Ayrıca 7/ 24 aktifim",
+      img: "https://www.w3schools.com/w3images/avatar2.png",
     },
     {
       id: "4",
-      name: "Elif Elibol",
+      name: "Ferhat Ergün",
       title: "Felsefe Öğretmeni",
       explanation:
         "Felsefe konusunda size kapsamlı ders verebilirim. İstediğiniz zaman istediğiniz soruyu sorabilirsiniz. Ayrıca 7/ 24 aktifim",
+      img: "https://www.w3schools.com/w3images/avatar2.png",
     },
     {
       id: "5",
-      name: "Elif Elibol",
+      name: "Erkan Kolakan",
       title: "Felsefe Öğretmeni",
       explanation:
         "Felsefe konusunda size kapsamlı ders verebilirim. İstediğiniz zaman istediğiniz soruyu sorabilirsiniz. Ayrıca 7/ 24 aktifim",
+      img: "https://www.w3schools.com/w3images/avatar2.png",
+
     },
     {
       id: "6",
@@ -52,22 +61,22 @@ const FindTeacher = ({ navigation }) => {
       title: "Felsefe Öğretmeni",
       explanation:
         "Felsefe konusunda size kapsamlı ders verebilirim. İstediğiniz zaman istediğiniz soruyu sorabilirsiniz. Ayrıca 7/ 24 aktifim",
+      img: "https://www.w3schools.com/w3images/avatar2.png",
+
     },
   ];
 
   const renderItem = ({ item }) => (
     <TouchableOpacity
       className="w-full bg-white  rounded-xl my-1   p-4"
-      onPress={() => {
-        navigation.navigate("TeacherDetail");
-      }}
+      onPress={() => navigation.navigate("TeacherDetail", { item })}
     >
-      <View className="flex flex-row gap-x-2 ">
+      <View className="flex flex-row gap-x-2 shadow shadow-gri ">
         <Avatar
           bg="green.500"
           className="w-16 h-16"
           source={{
-            uri: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+            uri: item.img,
           }}
         >
           AJ
