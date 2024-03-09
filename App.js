@@ -22,7 +22,7 @@ const App = () => {
     nunitoBlack: require("./assets/fonts/Nunito-Black.ttf"),
     nunitoSemiBold: require("./assets/fonts/Nunito-SemiBold.ttf"),
   });
-  const userRole = 5;
+  const userRole = 0;
   const loggedIn = true;
 
   const SelectedNavigator = () => {

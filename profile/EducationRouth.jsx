@@ -17,6 +17,7 @@ import {
   Message,
   Profile,
   ABC,
+  TeacherDetail
 } from "../screens/index";
 
 const BusinessRouter = () => {
@@ -115,6 +116,8 @@ const BusinessRouter = () => {
       }}
     >
       <Stack.Screen name="BusinessBottomTab" component={BusinessBottomTab} />
+      <Stack.Screen name="TeacherDetail" component={TeacherDetail} />
+
       {/* <Stack.Screen name="QrCode" component={QrCode} />
       <Stack.Screen name="createEmployee" component={CreateEmployee} />
       <Stack.Screen name="BussProfileEdit" component={BussProfileEdit} /> */}
