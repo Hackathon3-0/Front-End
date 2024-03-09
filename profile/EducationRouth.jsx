@@ -5,6 +5,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Image } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
+import Header from "../components/Header";
 
 // screens and components
 import {
@@ -46,17 +47,22 @@ const BusinessRouter = () => {
 
           if (route.name === "Ai") {
             iconName = focused ? "barcode" : "barcode-outline";
+            color = focused ? "#6CBA0E" : "black";
           } else if (route.name === "Blog") {
             iconName = focused ? "book" : "book-outline";
+            color = focused ? "#6CBA0E" : "black";
           } else if (route.name === "Home") {
             iconName = focused ? "home" : "home-outline";
+            color = focused ? "#6CBA0E" : "black";
           } else if (route.name === "Profile") {
             iconName = focused ? "person" : "person-outline";
+            color = focused ? "#6CBA0E" : "black";
           } else if (route.name === "FindTeacher") {
             iconName = focused ? "grid" : "grid-outline";
+            color = focused ? "#6CBA0E" : "black";
           }
           if (typeof iconName === "string") {
-            return <Ionicons name={iconName} size={size} color={"black"} />;
+            return <Ionicons name={iconName} size={size} color={color} />;
           } else {
             return (
               <Image
@@ -69,6 +75,7 @@ const BusinessRouter = () => {
         },
       })}
     >
+
       <Tab.Screen
         name="FindTeacher"
         component={FindTeacher}
