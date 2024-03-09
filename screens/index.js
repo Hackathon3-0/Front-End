@@ -11,6 +11,8 @@ import FindTeacher from "./student/FindTeacher"
 import Home from "./student/Home"
 import Message from "./student/Message"
 import Profile from "./student/Profile"
+import ABC from "./student/ABC"
+
 
 
 
@@ -28,6 +30,7 @@ export{
     FindTeacher,
     Home,
     Message,
-    Profile
+    Profile,
+    ABC
     
 }

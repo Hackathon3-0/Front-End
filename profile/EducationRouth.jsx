@@ -14,9 +14,9 @@ import {
   FindTeacher,
   Home,
   Message,
-  Profile
+  Profile,
+  ABC,
 } from "../screens/index";
-import Notification from "../components/Notification";
 
 const BusinessRouter = () => {
   const Tab = createBottomTabNavigator();
@@ -44,14 +44,16 @@ const BusinessRouter = () => {
         tabBarIcon: ({ focused, color, size }) => {
           let iconName;
 
-          if (route.name === "BussEmployeeJobs") {
-            iconName = focused
-              ? require("../assets/img/mustache.png")
-              : require("../assets/img/mustache-out.png");
-          } else if (route.name === "BussProfile") {
-            iconName = focused ? "ios-person" : "ios-person-outline";
-          } else if (route.name === "BussCharts") {
-            iconName = focused ? "pie-chart" : "pie-chart-outline";
+          if (route.name === "Ai") {
+            iconName = focused ? "barcode" : "barcode-outline";
+          } else if (route.name === "Blog") {
+            iconName = focused ? "book" : "book-outline";
+          } else if (route.name === "Home") {
+            iconName = focused ? "home" : "home-outline";
+          } else if (route.name === "Profile") {
+            iconName = focused ? "person" : "person-outline";
+          } else if (route.name === "FindTeacher") {
+            iconName = focused ? "grid" : "grid-outline";
           }
           if (typeof iconName === "string") {
             return <Ionicons name={iconName} size={size} color={"black"} />;
@@ -68,18 +70,26 @@ const BusinessRouter = () => {
       })}
     >
       <Tab.Screen
-        name="BussCharts"
-        component={BussCharts}
+        name="FindTeacher"
+        component={FindTeacher}
         options={{ headerShown: false }}
       />
       <Tab.Screen
-        name="BussEmployeeJobs"
-        component={BussEmployeeJobs}
+        name="Blog"
+        component={Blog}
         options={{ headerShown: false }}
       />
+
       <Tab.Screen
-        name="BussProfile"
-        component={BussProfile}
+        name="Home"
+        component={Home}
+        options={{ headerShown: false }}
+      />
+      <Tab.Screen name="Ai" component={Ai} options={{ headerShown: false }} />
+
+      <Tab.Screen
+        name="Profile"
+        component={Profile}
         options={{ headerShown: false }}
       />
     </Tab.Navigator>
@@ -97,11 +107,10 @@ const BusinessRouter = () => {
         }),
       }}
     >
-      <Stack.Screen name="businessTab" component={BusinessBottomTab} />
-      <Stack.Screen name="QrCode" component={QrCode} />
+      <Stack.Screen name="BusinessBottomTab" component={BusinessBottomTab} />
+      {/* <Stack.Screen name="QrCode" component={QrCode} />
       <Stack.Screen name="createEmployee" component={CreateEmployee} />
-      <Stack.Screen name="BussProfileEdit" component={BussProfileEdit} />
-      <Stack.Screen name="Notification" component={Notification} />
+      <Stack.Screen name="BussProfileEdit" component={BussProfileEdit} /> */}
     </Stack.Navigator>
   );
 

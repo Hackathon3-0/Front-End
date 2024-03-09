@@ -8,7 +8,7 @@ const Header = () => {
     <View className="bg-beyaz dark:bg-yesil2 h-14 w-full flex-row justify-between items-center px-2 ">
       <View className="">
         <Image
-          className="w-24 h-full "
+          className="w-10 h-9 "
           source={require("../assets/ducky.png")}
           resizeMode="contain"
         />
@@ -20,3 +20,4 @@ const Header = () => {
 };
 
 export default Header;
+ 
