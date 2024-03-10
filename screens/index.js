@@ -14,7 +14,10 @@ import Profile from "./student/Profile"
 import ABC from "./student/ABC"
 import TeacherDetail from "./student/TeacherDetail"
 import Category from "./student/Category"
-import HomeTeacher from "./teacher/Home"
+import TeacherBlog from "./teacher/TeacherBlog"
+import TeacherHome from "./teacher/TeacherHome"
+import TeacherMessages from "./teacher/TeacherMessages"
+import TeacherProfile from "./teacher/TeacherProfile"
 
 
 
@@ -40,6 +43,9 @@ export{
     ABC,
     TeacherDetail,
     Category,
-    HomeTeacher
+    TeacherBlog,
+    TeacherHome,
+    TeacherMessages,
+    TeacherProfile
     
 }

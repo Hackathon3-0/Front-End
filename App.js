@@ -19,6 +19,7 @@ import { useSelector } from "react-redux";
 const Main = () => {
   const dispatch = useDispatch();
   const userRole = useSelector((state) => state.user.user);
+  console.log("User", userRole);
 
   console.log("Role", userRole.role);
 
@@ -32,9 +33,9 @@ const Main = () => {
   
   const SelectedNavigator = () => {
     if (loggedIn) {
-      switch (userRole?.role) {
+      switch (userRole.role) {
         case "teacher":
-          return <EducationRouth />;
+          return <TeacherRouth />;
         case "student":
           return <EducationRouth />;
         default:
