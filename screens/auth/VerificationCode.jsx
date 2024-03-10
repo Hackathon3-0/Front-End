@@ -24,13 +24,13 @@ const VerificationCode = () => {
         contentContainerStyle={{ flexGrow: 1 }}
         showsVerticalScrollIndicator={false}
       >
-        <View className="flex-1 bg-beyazark dark:bg-yesil   justify-center items-center  ">
-          <Text className="max-w-xs font-semibold text-center text-lg text-yesil2 dark:text-beyaz">
+        <View className="flex-1 bg-beyazark    justify-center items-center  ">
+          <Text className="max-w-xs font-semibold text-center text-lg text-yesil2 ">
             Telefonunuza gelen doğrulama kodunu giriniz
           </Text>
           <Stack space={2} w="80%" my="4" mb="8" px={8}>
             <Input
-              className=" bg-beyaz  dark:bg-yesil2 text-[18px] text-yesil dark:text-beyaz"
+              className=" bg-beyaz  2 text-[18px] text-yesil "
               variant="filled"
               placeholder="X-X-X-X"
               shadow={1}
@@ -43,17 +43,15 @@ const VerificationCode = () => {
                 alert("Doğrulama kodu tekrar gönderildi", "green.500")
               }
             >
-              <Text className="text-right text-yesil2 dark:text-beyazark">
-                Yeniden gönder
-              </Text>
+              <Text className="text-right text-yesil2 ark">Yeniden gönder</Text>
             </TouchableOpacity>
           </Stack>
           <TouchableOpacity
-            className="w-[55%] h-14 shadow shadow-yesil2 justify-center items-center rounded-md bg-beyaz dark:bg-yesil2"
+            className="w-[55%] h-14 shadow shadow-yesil2 justify-center items-center rounded-md bg-beyaz 2"
             activeOpacity={0.7}
             // onPress={() => navigation.navigate("VerificationCode")}
           >
-            <Text className="font-semibold text-lg text-yesil2 dark:text-beyaz">
+            <Text className="font-semibold text-lg text-yesil2 ">
               Kodu Onayla
             </Text>
           </TouchableOpacity>

@@ -26,12 +26,12 @@ const RenewPassword = ({ navigation }) => {
         showsVerticalScrollIndicator={false}
       >
         <View className="flex-1 bg-beyazark    justify-center items-center   ">
-          <Text className="max-w-xs font-semibold text-center text-lg text-yesil2 dark:text-beyaz">
+          <Text className="max-w-xs font-semibold text-center text-lg text-yesil2 ">
             Şifrenizi sıfırlamak için e-postanızı girin.
           </Text>
           <Stack space={2} w="80%" my="4" mb="8" px={8}>
             <Input
-              className=" bg-beyaz   text-[14px] text-gri dark:text-beyaz"
+              className=" bg-beyaz   text-[14px] text-gri "
               variant="filled"
               placeholder="Email"
               shadow={1}
@@ -41,7 +41,7 @@ const RenewPassword = ({ navigation }) => {
             <TouchableOpacity
               onPress={() => alert("Mail yeniden gönderildi", "green.500")}
             >
-              <Text className="text-right text-gri dark:text-beyazark">
+              <Text className="text-right text-gri ark">
                 Yeniden gönder
               </Text>
             </TouchableOpacity>
@@ -54,7 +54,7 @@ const RenewPassword = ({ navigation }) => {
                 navigation.navigate("Login");
             }}
           >
-            <Text className="font-semibold text-lg text-yesil2 dark:text-beyaz">
+            <Text className="font-semibold text-lg text-yesil2 ">
               Gönder
             </Text>
           </TouchableOpacity>

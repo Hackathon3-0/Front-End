@@ -24,7 +24,7 @@ export default function DowlandImage({ values }) {
       <TouchableOpacity onPress={pickImage}
         activeOpacity={.9}
       >
-        <View className="border border-beyazbo shadow-sm shadow-yesil2 bg-beyaz dark:bg-yesil2 dark:border-beyazark justify-center items-center rounded-full w-28 h-28">
+        <View className="border border-beyazbo shadow-sm shadow-yesil2 bg-beyaz   justify-center items-center rounded-full w-28 h-28">
           {image ? (
             <Image
               source={{ uri: image }}
