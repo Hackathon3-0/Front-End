@@ -33,7 +33,6 @@ const BusinessRouter = () => {
         headerShown: false,
         tabBarShowLabel: false,
         tabBarStyle: {
-          position: "absolute",
           borderTopLeftRadius: 20,
           borderTopRightRadius: 20,
           shadowColor: "black",

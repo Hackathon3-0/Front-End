@@ -99,7 +99,7 @@ const Blog = () => {
   );
 
   return (
-    <View className="flex-[.86]">
+    <View className="flex-[0.95]">
       <Header />
           <View className=" items-center">
             <FlatList

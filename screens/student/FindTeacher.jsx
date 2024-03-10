@@ -120,12 +120,13 @@ const FindTeacher = () => {
         />
       </Stack>
 
-      <View className="mx-2  h-full">
+      <View className="mx-2 h-full">
         <FlatList
           data={DATA}
           renderItem={renderItem}
           keyExtractor={(item) => item.id}
           showsVerticalScrollIndicator={false}
+          className="mb-28"
         />
       </View>
     </View>
