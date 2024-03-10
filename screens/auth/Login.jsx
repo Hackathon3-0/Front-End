@@ -36,7 +36,7 @@ const BusRegister = ({ navigation }) => {
     }
   }
   return (
-    <View className="flex-1 bg-beyazark dark:bg-yesil ">
+    <View className="flex-1 bg-beyazark  ">
       {/* header */}
       <GoBackHeader title={"Giriş Yap"} />
       <ScrollView
@@ -52,7 +52,7 @@ const BusRegister = ({ navigation }) => {
 
           <Stack space={2} w="80%" my="8" mx="auto" px={8}>
             <Input
-              className=" bg-beyaz  text-[14px] text-gri dark:text-beyaz "
+              className=" bg-beyaz  text-[14px] text-gri  "
               variant="filled"
               placeholder="Email"
               keyboardType="email-address"
@@ -62,7 +62,7 @@ const BusRegister = ({ navigation }) => {
               borderColor={isValidEmail ? "transparent" : "red.900"}
             />
             <Input
-              className=" bg-beyaz relative  text-[14px] text-gri dark:text-beyaz "
+              className=" bg-beyaz relative  text-[14px] text-gri  "
               variant="filled"
               placeholder="Şifre"
               shadow={1}
@@ -87,7 +87,7 @@ const BusRegister = ({ navigation }) => {
               <TouchableOpacity
                 onPress={() => navigation.navigate("RenewPassword")}
               >
-                <Text className=" text-yesil2 dark:text-beyaz">
+                <Text className=" text-yesil2 ">
                   Şifreyi sıfırla
                 </Text>
               </TouchableOpacity>
@@ -111,7 +111,7 @@ const BusRegister = ({ navigation }) => {
               navigation.navigate("AuthEntryQuestion");
             }}
           >
-            <Text className="font-semibold text-lg text-yesil2 dark:text-beyaz">
+            <Text className="font-semibold text-lg text-yesil2 ">
               Kaydın yok mu? Kayıt ol
             </Text>
           </TouchableOpacity>
