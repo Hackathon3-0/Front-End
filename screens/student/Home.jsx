@@ -109,7 +109,7 @@ const Home = () => {
 
         <View className="bg-white shadow  shadow-gri rounded-md p-2 m-2">
           <Text className="text-gri text-2xl font-nunitoExtraBold text-start ml-2">
-            Derslerin
+            Günlük Görevler
           </Text>
           <Text className="text-griAcik text-xs font-nunitoExtraBold text-start ml-2 -mt-1">
             Görevleri tamamlayarak tecrübe puanı kazan
