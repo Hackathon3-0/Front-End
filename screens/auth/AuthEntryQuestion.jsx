@@ -21,7 +21,7 @@ const AuthEntryQuestion = ({ navigation }) => {
             </Text>
           </View>
           <TouchableOpacity
-            className="w-[55%] h-16 shadow shadow-yesil2 justify-center items-center rounded-md mb-4 bg-beyaz dark:bg-yesil2"
+            className="w-[55%] h-16 shadow shadow-yesil2 justify-center items-center rounded-md mb-4 bg-beyaz "
             activeOpacity={0.7}
             onPress={() => navigation.navigate("CusRegister")}
           >
@@ -32,7 +32,7 @@ const AuthEntryQuestion = ({ navigation }) => {
             </Text>
           </TouchableOpacity>
           <TouchableOpacity
-            className="w-[55%] h-16 shadow shadow-yesil2 justify-center items-center rounded-md bg-beyaz dark:bg-yesil2"
+            className="w-[55%] h-16 shadow shadow-yesil2 justify-center items-center rounded-md bg-beyaz "
             activeOpacity={0.7}
             onPress={() => navigation.navigate("BusRegister")}
           >
@@ -46,7 +46,7 @@ const AuthEntryQuestion = ({ navigation }) => {
         </View>
 
         <TouchableOpacity
-          className="w-[70%] h-16 shadow shadow-yesil2 justify-center items-center rounded-full bg-yesil dark:bg-yesil2"
+          className="w-[70%] h-16 shadow shadow-yesil2 justify-center items-center rounded-full bg-yesil "
           onPress={() => navigation.navigate("Login")}
           activeOpacity={0.7}
         >

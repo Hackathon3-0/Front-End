@@ -5,6 +5,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 const initialState = {
   user:  false,
   token: false,
+  loggedIn: false,
 };
 
 const userSlice = createSlice({
@@ -17,10 +18,14 @@ const userSlice = createSlice({
     updateToken: (state, action) => {
       state.token = action.payload;
     },
+    updateLoggedIn: (state, action) => {
+      state.loggedIn = action.payload;
+    },
+
   },
 });
 
-export const { updateToken, updateUser } = userSlice.actions;
+export const { updateToken, updateUser, updateLoggedIn } = userSlice.actions;
 
 export default userSlice.reducer;
 
@@ -32,12 +37,15 @@ export const loadInitialStateFromStorage = async (dispatch) => {
     
      // Değerler null değilse store'u güncelle
     if (user !== null) {
+      await dispatch(updateLoggedIn(true));
       dispatch(updateUser(JSON.parse(user)));
     } else {
       dispatch(updateUser(false));
     }
     if (token !== null) {
+      await dispatch(updateLoggedIn(true));
       dispatch(updateToken(token));
+
     } else {
       dispatch(updateToken(false));
     }
