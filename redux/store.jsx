@@ -1,11 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
-import teacherSlice from "./teacherSlice";
+import userSlice from "./userSlice";
 
 
 
 export default configureStore({
     reducer:{
-        teacher:teacherSlice,
+        user:userSlice,
         
     }
 })

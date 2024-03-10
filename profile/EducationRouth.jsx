@@ -5,7 +5,6 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Image } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
-import Header from "../components/Header";
 
 // screens and components
 import {
@@ -17,10 +16,14 @@ import {
   Message,
   Profile,
   ABC,
-  TeacherDetail
+  TeacherDetail,
+  Category
 } from "../screens/index";
+import { useSelector } from "react-redux";
 
 const BusinessRouter = () => {
+  const userCategories = useSelector((state) => state.user.user).categories
+  console.log("user", userCategories);
   const Tab = createBottomTabNavigator();
   const Stack = createStackNavigator();
 
@@ -104,7 +107,7 @@ const BusinessRouter = () => {
   );
 
   const BusinessNavigator = () => (
-    <Stack.Navigator
+    <Stack.Navigator 
       screenOptions={{
         headerShown: false,
         // geçiş animasyonu
@@ -115,6 +118,11 @@ const BusinessRouter = () => {
         }),
       }}
     >
+      {
+        userCategories.length === 0 && (
+          <Stack.Screen name="Category" component={Category} />
+        )
+      }
       <Stack.Screen name="BusinessBottomTab" component={BusinessBottomTab} />
       <Stack.Screen name="TeacherDetail" component={TeacherDetail} />
       <Stack.Screen name="BlogRead" component={BlogRead} />

@@ -46,7 +46,6 @@ const CusRegister = ({ navigation }) => {
     // Email için bir regex kullanarak doğrulama yapalım
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const isValid = emailRegex.test(text);
-    console.log(isValid, "isValid")
     setIsValidEmail(isValid);
     setEmail(text);
   };
@@ -130,25 +129,11 @@ const CusRegister = ({ navigation }) => {
             />
           </Stack>
           <TouchableOpacity
-            className="w-[55%] h-14 shadow shadow-yesil2 justify-center items-center rounded-md mb-4 bg-yesil "
+            className="w-[55%] h-14 justify-center items-center rounded-md mb-4 bg-yesil "
             activeOpacity={0.7}
             onPress={handleRegister}
           >
             <Text className="font-semibold text-lg text-beyaz ">Kayıt Ol</Text>
-          </TouchableOpacity>
-        </View>
-        <View className="w-full items-center">
-          <TouchableOpacity
-            className="w-[80%] h-14 shadow shadow-yesil2 justify-center items-center rounded-md mb-4 bg-beyaz "
-            activeOpacity={0.9}
-            // onPress={() => {
-            //   navigation.navigate("EmpProfile");
-            // }}
-            // onPress={() => toggleColorScheme()}
-          >
-            <Text className="font-semibold text-lg text-gri ">
-              Zaten bir hesabım var
-            </Text>
           </TouchableOpacity>
         </View>
       </ScrollView>
