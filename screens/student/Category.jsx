@@ -101,9 +101,7 @@ const Category = ({ navigation }) => {
           body: JSON.stringify({ categories: selectedIds }),
         }
       );
-      console.log(selectedIds);
       const data = await response.json();
-      console.log(data);
       dispatch(updateUser(data.data));
       await AsyncStorage.setItem("user", JSON.stringify(data.data));
     } catch (error) {
