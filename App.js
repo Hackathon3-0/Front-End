@@ -19,10 +19,6 @@ import { useSelector } from "react-redux";
 const Main = () => {
   const dispatch = useDispatch();
   const userRole = useSelector((state) => state.user.user);
-  const token = useSelector((state) => state.user.loggedIn);
-  console.log('====================================');
-  console.log('Token', token);
-  console.log('====================================');
 
   console.log("Role", userRole.role);
 
@@ -30,13 +26,13 @@ const Main = () => {
     loadInitialStateFromStorage(dispatch);
   }, [dispatch]);
 
-  const loggedIn = !!token;
+  const loggedIn = true;
 
 
   
   const SelectedNavigator = () => {
     if (loggedIn) {
-      switch (userRole.role) {
+      switch (userRole?.role) {
         case "teacher":
           return <EducationRouth />;
         case "student":

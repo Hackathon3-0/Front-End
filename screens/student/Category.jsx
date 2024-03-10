@@ -10,7 +10,10 @@ import React from "react";
 import Header from "../../components/Header";
 import { useState } from "react";
 import { BACKEND_URL } from "../../env";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { updateUser } from "../../redux/userSlice";
+import AsyncStorage from '@react-native-async-storage/async-storage';
+
 
 const Category = ({navigation}) => {
   const DATA = [
@@ -85,21 +88,34 @@ const Category = ({navigation}) => {
 
   const user = useSelector((state) => state.user.user);
   const token = useSelector((state) => state.user.token);
+  const dispatch = useDispatch()
+
 
   const handleCategory = async () => {
     const id= user._id
+    console.log(token)
+    try{
+      const response = await fetch(`${BACKEND_URL}/api/v1/teachers/${id}/add-category`, {
+        method: "PUT",
+        headers: {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${token}`,
+        },
+        body: JSON.stringify({ categories: selectedIds }),
+    });
     console.log(selectedIds)
-    const response = await fetch(`${BACKEND_URL}/api/v1/teachers/${id}/add-category`, {
-      method: "PUT",
-      headers: {
-      "Content-Type": "application/json",
-      "Authorization": `Bearer ${token}`,
-      },
-      body: JSON.stringify({ category: selectedIds }),
-  });
-  const data = await response.json();
+    const data = await response.json();
+    console.log(data);
+    dispatch(updateUser(data.data))
+    await AsyncStorage.setItem("user", JSON.stringify(data.data));
+    
+    }catch(error){
+      console.log(error)
+    }
+    
+    
   // navigation.navigate("BusinessBottomTab")
-  console.log(data);
+
   }
 
   const renderItem = ({ item }) => (
