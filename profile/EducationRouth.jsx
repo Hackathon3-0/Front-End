@@ -23,6 +23,7 @@ import { useSelector } from "react-redux";
 
 const BusinessRouter = () => {
   const userCategories = useSelector((state) => state.user.user).categories
+  console.log("userCategories", userCategories)
   const Tab = createBottomTabNavigator();
   const Stack = createStackNavigator();
 
@@ -116,11 +117,11 @@ const BusinessRouter = () => {
         }),
       }}
     >
-{/*       {
-        userCategories.length === 0 && (
+      {
+        userCategories.length === 0 ? (
           <Stack.Screen name="Category" component={Category} />
-        )
-      } */}
+        ):null
+      } 
       <Stack.Screen name="BusinessBottomTab" component={BusinessBottomTab} />
       <Stack.Screen name="TeacherDetail" component={TeacherDetail} />
       <Stack.Screen name="BlogRead" component={BlogRead} />

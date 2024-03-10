@@ -2,11 +2,14 @@ import { View, Text, FlatList, Image, ScrollView } from "react-native";
 import React, { useEffect, useState } from "react";
 import Header from "../../components/Header";
 import * as Progress from "react-native-progress";
+import { useSelector } from "react-redux";
 
 const Home = () => {
   const [circleProgress, setCircleProgress] = useState(0);
   const [bar1Progress, setBar1Progress] = useState(0);
   const [bar2Progress, setBar2Progress] = useState(0);
+  const user = useSelector((state) => state.user.user);
+  console.log(user.categories);
 
   useEffect(() => {
     // Animate circle chart
@@ -43,7 +46,7 @@ const Home = () => {
   const renderItem = ({ item }) => (
     <View className="bg-white shadow shadow-gri rounded-md p-2 m-2 ">
       <Text className="text-gri text-xl font-nunitoExtraBold">
-        {item.title}
+        {item}
       </Text>
       <View className="flex-row py-2">
         <View className="">
@@ -64,7 +67,7 @@ const Home = () => {
           </Text>
         </View>
       </View>
-      <View className="flex-row  justify-around">
+      <View className="flex-row justify-around">
         <View className="flex-row justify-center items-center">
           <Text className="text-gri text-base font-nunitoBold">7/30</Text>
           <Progress.Bar
@@ -101,8 +104,8 @@ const Home = () => {
       <ScrollView>
         <View className="">
           <FlatList
-            data={data}
-            keyExtractor={(item) => item.id}
+            data={user.categories}
+            keyExtractor={(item,index) => index}
             renderItem={renderItem}
           />
         </View>
@@ -150,7 +153,7 @@ const Home = () => {
                 Ducky ile konuş
               </Text>
               <Text className="text-sm font-nunitoSemiBold text-griAcik -mt-1">
-                5 adet testi tamamlayın
+                5 dakika ducky ile konuş
               </Text>
               <Text className="text-sm font-nunitoSemiBold text-turunc -mt-1">
                 30 ducky puan
@@ -168,10 +171,10 @@ const Home = () => {
             </View>
             <View className=" flex-1 h-12 ml-2 ">
               <Text className="text-lg font-nunitoSemiBold text-gri">
-                5 Test çöz
+                3 Blog oku
               </Text>
               <Text className="text-sm font-nunitoSemiBold text-griAcik -mt-1">
-                5 adet testi tamamlayın
+                3 adet blog okuyun
               </Text>
               <Text className="text-sm font-nunitoSemiBold text-turunc -mt-1">
                 30 ducky puan
