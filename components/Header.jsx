@@ -5,7 +5,7 @@ import React from "react";
 const Header = () => {
 
   return (
-    <View className="bg-beyaz dark:bg-yesil2 h-14 w-full flex-row justify-between items-center px-2 ">
+    <View className="bg-beyaz  h-14 w-full flex-row justify-between items-center px-2 ">
       <View className="">
         <Image
           className="w-10 h-9 "
