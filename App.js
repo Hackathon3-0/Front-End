@@ -19,13 +19,18 @@ import { useSelector } from "react-redux";
 const Main = () => {
   const dispatch = useDispatch();
   const userRole = useSelector((state) => state.user.user);
+  const token = useSelector((state) => state.user.loggedIn);
+  console.log('====================================');
+  console.log('Token', token);
+  console.log('====================================');
+
   console.log("Role", userRole.role);
 
   useEffect(() => {
     loadInitialStateFromStorage(dispatch);
   }, [dispatch]);
 
-  const loggedIn = true;
+  const loggedIn = !!token;
 
 
   
