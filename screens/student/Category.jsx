@@ -102,18 +102,23 @@ const Category = ({ navigation }) => {
         }
       );
       const data = await response.json();
-      dispatch(updateUser(data.data));
-      await AsyncStorage.setItem("user", JSON.stringify(data.data));
+      console.log(data);
+      if(data.status === "success"){
+        dispatch(updateUser(data.data));
+        await AsyncStorage.setItem("user", JSON.stringify(data.data));
+        navigation.navigate("BusinessBottomTab")
+      }
+
     } catch (error) {
       console.log(error);
     }
 
-    // navigation.navigate("BusinessBottomTab")
+    
   };
 
   const renderItem = ({ item }) => (
     <TouchableOpacity
-      className={` w-40 h-40   relative m-2 justify-center items-center overflow-hidden shadow-sm shadow-griAcik 
+      className={` w-40 h-40 relative m-2 justify-center items-center overflow-hidden shadow-sm shadow-griAcik 
       rounded-md bg-beyaz   `}
       activeOpacity={0.8}
       onPress={() => handleSelect(item.id)}

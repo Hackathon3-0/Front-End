@@ -10,7 +10,7 @@ import { Entypo, Feather } from "@expo/vector-icons";
 import { ScrollView } from "native-base";
 import { useSelector } from "react-redux";
 
-const Profile = () => {
+const Profile = ({navigation}) => {
   const dispatch = useDispatch();
   
   const logOut = async () => {
@@ -93,6 +93,13 @@ const Profile = () => {
                 </View>
               ))}
             </View>
+            <View className="w-[90%] ">
+              <TouchableOpacity className="p-2 bg-yesil rounded-2xl items-center justify-center flex-row h-12 gap-x-3 mt-3"
+              onPress={()=>navigation.navigate("Category")}>
+                <AntDesign name="plus" size={24} color="white" />
+                <Text className="text-white font-nunitoExtraBold text-base">Ders Ekle</Text>
+              </TouchableOpacity>
+            </View> 
           </View>
         </View>
       </ScrollView>

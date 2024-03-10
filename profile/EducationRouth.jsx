@@ -20,6 +20,7 @@ import {
   Category
 } from "../screens/index";
 import { useSelector } from "react-redux";
+import Test from "../screens/student/Test";
 
 const BusinessRouter = () => {
   const userCategories = useSelector((state) => state.user.user).categories
@@ -105,7 +106,7 @@ const BusinessRouter = () => {
   );
 
   const BusinessNavigator = () => (
-    <Stack.Navigator 
+    <Stack.Navigator initialRouteName={userCategories.length === 0 ? "Category" : "BusinessBottomTab"}
       screenOptions={{
         headerShown: false,
         // geçiş animasyonu
@@ -116,11 +117,9 @@ const BusinessRouter = () => {
         }),
       }}
     >
-      {
-        userCategories.length === 0 ? (
-          <Stack.Screen name="Category" component={Category} />
-        ):null
-      } 
+    
+      <Stack.Screen name="Category" component={Category} />
+      <Stack.Screen name="Test" component={Test} />
       <Stack.Screen name="BusinessBottomTab" component={BusinessBottomTab} />
       <Stack.Screen name="TeacherDetail" component={TeacherDetail} />
       <Stack.Screen name="BlogRead" component={BlogRead} />

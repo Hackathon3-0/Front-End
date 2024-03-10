@@ -3,8 +3,9 @@ import React, { useEffect, useState } from "react";
 import Header from "../../components/Header";
 import * as Progress from "react-native-progress";
 import { useSelector } from "react-redux";
+import { TouchableOpacity } from "react-native-gesture-handler";
 
-const Home = () => {
+const Home = ({navigation}) => {
   const [circleProgress, setCircleProgress] = useState(0);
   const [bar1Progress, setBar1Progress] = useState(0);
   const [bar2Progress, setBar2Progress] = useState(0);
@@ -84,13 +85,7 @@ const Home = () => {
     <View className="flex-1 ">
       <Header />
       <ScrollView>
-        <View className="">
-          <FlatList
-            data={user.categories}
-            keyExtractor={(item,index) => index}
-            renderItem={renderItem}
-          />
-        </View>
+
 
         <View className="bg-white shadow  shadow-gri rounded-md p-2 m-2">
           <Text className="text-gri text-2xl font-nunitoExtraBold text-start ml-2">
@@ -100,7 +95,8 @@ const Home = () => {
             Görevleri tamamlayarak tecrübe puanı kazan
           </Text>
 
-          <View className="flex-row my-2 ">
+          <TouchableOpacity className="flex-row my-2 " 
+          onPress={()=>navigation.navigate("Test")}>
             <View className="justify-center items-center w-16">
               <Image
                 source={require("../../assets/test.jpg")}
@@ -119,7 +115,7 @@ const Home = () => {
                 30 ducky puan
               </Text>
             </View>
-          </View>
+          </TouchableOpacity>
 
          
           <View className="flex-row my-2 ">
@@ -164,6 +160,13 @@ const Home = () => {
             </View>
           </View>
 
+        </View>
+        <View className="">
+          <FlatList
+            data={user.categories}
+            keyExtractor={(item,index) => index}
+            renderItem={renderItem}
+          />
         </View>
       </ScrollView>
     </View>
