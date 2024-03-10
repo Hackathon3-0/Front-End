@@ -91,7 +91,7 @@ const Category = ({ navigation }) => {
     console.log(token);
     try {
       const response = await fetch(
-        `${BACKEND_URL}/api/v1/teachers/${id}/add-category`,
+        `${BACKEND_URL}/api/v1/students/${id}/add-category`,
         {
           method: "PUT",
           headers: {
