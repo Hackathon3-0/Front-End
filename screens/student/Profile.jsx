@@ -6,7 +6,7 @@ import React, { useState } from "react";
 import { StatusBar } from "expo-status-bar";
 import Header from "../../components/Header";
 import { AntDesign } from "@expo/vector-icons";
-import { Entypo } from "@expo/vector-icons";
+import { Entypo, Feather } from "@expo/vector-icons";
 import { ScrollView } from "native-base";
 import { useSelector } from "react-redux";
 
