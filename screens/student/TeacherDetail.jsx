@@ -15,7 +15,13 @@ const TeacherDetail = () => {
   return (
     <View>
       <Goback />
-      <ScrollView className="mb-14"
+      <View className="bg-yesil  absolute bottom-14 h-14 w-[100%]">
+      <TouchableOpacity className="w-full h-full items-center justify-center ">
+        <Text className="text-white font-nunitoExtraBold text-lg">İletişime Geç</Text>
+        
+      </TouchableOpacity>
+      </View>
+      <ScrollView className="mb-28"
         showsVerticalScrollIndicator={false}
       >
         <View className=" justify-start items-center p-2 m-2 flex-row ">
@@ -59,7 +65,7 @@ const TeacherDetail = () => {
           <Text className=" text-2xl font-nunitoExtraBold text-gri m-2">
             Hakkında
           </Text>
-          <Text className=" text-base font-nunitoExtraBold text-griAcik mx-2 mb-2">
+          <Text className=" text-sm font-nunitoExtraBold text-griAcik mx-2 mb-2">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
             ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -70,7 +76,7 @@ const TeacherDetail = () => {
           </Text>
         </View>
 
-        <Text className="text-3xl font-nunitoExtraBold ml-2 mt-2 text-yesil ">
+        <Text className="text-2xl font-nunitoExtraBold ml-2 mt-2 text-yesil ">
           Dersler
         </Text>
 
@@ -79,7 +85,7 @@ const TeacherDetail = () => {
             activeOpacity={0.7}
           >
             <View className="flex-row items-center justify-between">
-              <Text className="  text-2xl  font-nunitoExtraBold text-gri m-2">
+              <Text className="text-2xl  font-nunitoExtraBold text-gri m-2">
                 TYT Paket
               </Text>
               <View className="flex-row items-center justify-center">
@@ -94,7 +100,7 @@ const TeacherDetail = () => {
                 </Text>
               </View>
             </View>
-            <Text className=" text-base font-nunitoExtraBold text-griAcik mx-2 mb-2">
+            <Text className=" text-sm font-nunitoExtraBold text-griAcik mx-2 mb-2">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
               enim ad minim veniam, quis nostrud exercitation ullamco laboris
@@ -120,7 +126,7 @@ const TeacherDetail = () => {
                 </Text>
               </View>
             </View>
-            <Text className=" text-base font-nunitoExtraBold text-griAcik mx-2 mb-2">
+            <Text className=" text-sm font-nunitoExtraBold text-griAcik mx-2 mb-2">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
               enim ad minim veniam, quis nostrud exercitation ullamco laboris
@@ -146,7 +152,7 @@ const TeacherDetail = () => {
                 </Text>
               </View>
             </View>
-            <Text className=" text-base font-nunitoExtraBold text-griAcik mx-2 mb-2">
+            <Text className=" text-sm font-nunitoExtraBold text-griAcik mx-2 mb-2">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
               enim ad minim veniam, quis nostrud exercitation ullamco laboris
@@ -158,7 +164,7 @@ const TeacherDetail = () => {
           >
             <View className="flex-row items-center justify-between">
               <Text className="  text-2xl  font-nunitoExtraBold text-gri m-2">
-                Fizil
+                Fizik
               </Text>
               <View className="flex-row items-center justify-center">
                 <AntDesign
@@ -172,7 +178,7 @@ const TeacherDetail = () => {
                 </Text>
               </View>
             </View>
-            <Text className=" text-base font-nunitoExtraBold text-griAcik mx-2 mb-2">
+            <Text className=" text-sm font-nunitoExtraBold text-griAcik mx-2 mb-2">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
               enim ad minim veniam, quis nostrud exercitation ullamco laboris

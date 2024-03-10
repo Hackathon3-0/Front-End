@@ -1,22 +1,25 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useDispatch } from "react-redux";
 import { updateToken, updateUser } from "../../redux/userSlice";
-import { Text, View, Image } from "react-native";
+import { Text, View, Image, TouchableOpacity } from "react-native";
 import React, { useState } from "react";
 import { StatusBar } from "expo-status-bar";
 import Header from "../../components/Header";
 import { AntDesign } from "@expo/vector-icons";
 import { Entypo, Feather } from "@expo/vector-icons";
 import { ScrollView } from "native-base";
+import { useSelector } from "react-redux";
 
 const Profile = () => {
   const dispatch = useDispatch();
+  
   const logOut = async () => {
     await AsyncStorage.removeItem("token");
     await AsyncStorage.removeItem("user");
     dispatch(updateToken(false));
     dispatch(updateUser(false));
   };
+  const user = useSelector((state) => state.user.user);
   return (
     <View className="flex-1  ">
       <Header />
@@ -26,6 +29,9 @@ const Profile = () => {
       >
         <View className="flex-1  ">
           <View className="w-full">
+            <TouchableOpacity className="absolute right-3 top-4 w-11 h-12 z-40 bg-slate-50 rounded-2xl justify-center items-center">
+              <AntDesign name="logout" size={24} color="black" onPress={logOut}  />
+            </TouchableOpacity>
             <Image
               className="w-full h-[150] "
               source={require("../../assets/bgGreen.jpeg")}
@@ -75,36 +81,17 @@ const Profile = () => {
               Aldığın dersler
             </Text>
             <View className="w-full">
-              <View className="bg-white h-14 shadow flex-row items-center shadow-gri rounded-md p-2 mx-2  my-1">
-                <Entypo name="dot-single" size={24} color="#FF9900" />
-                <Text className="text-lg font-nunitoExtraBold text-gri">
-                  Felsefe
-                </Text>
-              </View>
-              <View className="bg-white h-14 shadow flex-row items-center shadow-gri rounded-md p-2 mx-2  my-1">
-                <Entypo name="dot-single" size={24} color="#FF9900" />
-                <Text className="text-lg font-nunitoExtraBold text-gri">
-                  Matematik
-                </Text>
-              </View>
-              <View className="bg-white h-14 shadow flex-row items-center shadow-gri rounded-md p-2 mx-2  my-1">
-                <Entypo name="dot-single" size={24} color="#FF9900" />
-                <Text className="text-lg font-nunitoExtraBold text-gri">
-                  İngilizce
-                </Text>
-              </View>
-              <View className="bg-white h-14 shadow flex-row items-center shadow-gri rounded-md p-2 mx-2  my-1">
-                <Entypo name="dot-single" size={24} color="#FF9900" />
-                <Text className="text-lg font-nunitoExtraBold text-gri">
-                  Fizik
-                </Text>
-              </View>
-              <View className="bg-yesil h-14 shadow flex-row justify-center items-center shadow-gri rounded-md p-2 mx-2  my-1">
-                <Text className="text-lg font-nunitoExtraBold text-beyaz">
-                  Ders Ekle
-                </Text>
-                <Feather name="plus" size={35} color="#FFFF" />
-              </View>
+              {user.categories.map((item, index) => (
+                <View
+                  className="bg-white h-14 shadow flex-row items-center shadow-gri rounded-md p-2 mx-2  my-1"
+                  key={index}
+                >
+                  <Entypo name="dot-single" size={24} color="#FF9900" />
+                  <Text className="text-lg font-nunitoExtraBold text-gri">
+                    {item}
+                  </Text>
+                </View>
+              ))}
             </View>
           </View>
         </View>

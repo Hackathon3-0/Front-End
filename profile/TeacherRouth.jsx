@@ -2,12 +2,7 @@ import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 
 import {
-  AuthEntryQuestion,
-  CusRegister,
-  BusRegister,
-  VerificationCode,
-  Login,
-  RenewPassword,
+  HomeTeacher
 } from "../screens/index";
 
 const TeacherRouth = () => {
@@ -25,12 +20,7 @@ const TeacherRouth = () => {
         }),
       }}
     >
-      <Stack.Screen name="AuthEntryQuestion" component={AuthEntryQuestion} />
-      <Stack.Screen name="CusRegister" component={CusRegister} />
-      <Stack.Screen name="BusRegister" component={BusRegister} />
-      <Stack.Screen name="VerificationCode" component={VerificationCode} />
-      <Stack.Screen name="Login" component={Login} />
-      <Stack.Screen name="RenewPassword" component={RenewPassword} />
+      <Stack.Screen name="HomeTeacher" component={HomeTeacher} />
     </Stack.Navigator>
   );
 

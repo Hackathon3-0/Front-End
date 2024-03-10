@@ -9,7 +9,6 @@ const Home = () => {
   const [bar1Progress, setBar1Progress] = useState(0);
   const [bar2Progress, setBar2Progress] = useState(0);
   const user = useSelector((state) => state.user.user);
-  console.log(user.categories);
 
   useEffect(() => {
     // Animate circle chart
@@ -25,23 +24,6 @@ const Home = () => {
 
     return () => clearInterval(circleInterval);
   }, []);
-
-  const data = [
-    {
-      id: "1",
-      title: "Felsefe",
-      circleProgress: 0.8,
-      bar1Progress: 0.3,
-      bar2Progress: 0.6,
-    },
-    {
-      id: "2",
-      title: "Matematik",
-      circleProgress: 0.6,
-      bar1Progress: 0.5,
-      bar2Progress: 0.7,
-    },
-  ];
 
   const renderItem = ({ item }) => (
     <View className="bg-white shadow shadow-gri rounded-md p-2 m-2 ">
