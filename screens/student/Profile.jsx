@@ -6,7 +6,7 @@ import React, { useState } from "react";
 import { StatusBar } from "expo-status-bar";
 import Header from "../../components/Header";
 import { AntDesign } from "@expo/vector-icons";
-import { Entypo } from "@expo/vector-icons";
+import { Entypo, Feather } from "@expo/vector-icons";
 import { ScrollView } from "native-base";
 
 const Profile = () => {
@@ -98,6 +98,12 @@ const Profile = () => {
                 <Text className="text-lg font-nunitoExtraBold text-gri">
                   Fizik
                 </Text>
+              </View>
+              <View className="bg-yesil h-14 shadow flex-row justify-center items-center shadow-gri rounded-md p-2 mx-2  my-1">
+                <Text className="text-lg font-nunitoExtraBold text-beyaz">
+                  Ders Ekle
+                </Text>
+                <Feather name="plus" size={35} color="#FFFF" />
               </View>
             </View>
           </View>
